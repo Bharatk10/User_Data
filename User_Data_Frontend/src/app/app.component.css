@@ -1,0 +1,52 @@
+.main{
+    padding: 0;
+    margin:0;
+    background-color: aqua;
+    height:610px;
+}
+
+h1{
+    text-align: center;
+}
+.download,.upload{
+    text-align: center;
+}
+  
+.download button{
+    background-color: yellow;
+    padding: 20px 100px;
+    border: 1px solid black;
+    
+}
+
+.upload input{
+    background-color: yellow;
+    padding: 20px 30px;
+    border: 1px solid black;
+}
+.download button:hover, .upload input[type="file"]:hover {
+    background-color: #87d995;
+  }
+
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #292727;
+  }
+
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #292727;
+  }
+
+  table th {
+    background-color: #3f49d9b4;
+    color: white;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f5f0f0f3;
+  }

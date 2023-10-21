@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+ 
+<div class="main">
+
+  <h1>Template Screen</h1>
+  <br>
+  <div class="download">
+  <button (click)="downloadExcel()">Download Excel</button>
+  
+</div>
+<br>
+<br>
+  <div class="upload">
+    <input type="file" (change)="readExcelFile($event)" />
+  </div>
+   
+  <br>
+    <table class="table" *ngIf="users.length>0" >
+      <thead>
+          <tr>
+              <th>First_Name</th>
+              <th>Last_Name</th>
+              <th>Date_of_Birth</th>
+              <th>City</th>
+             
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let u of users">
+              <td>{{u.First_Name}}</td>
+              <td>{{u.Last_Name}}</td>
+              <td>{{u.Date_of_Birth}}</td>
+              <td>{{u.City}}</td>
+             
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+  
+
+</html>
