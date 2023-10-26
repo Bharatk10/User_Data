@@ -36,7 +36,8 @@ public class UserController {
 	
 
 	@GetMapping("/user")
-	public void downloaddata(HttpServletResponse response) throws Exception{
+	public void downloaddata(@ModelAttribute("field1") String field1,@ModelAttribute("field2") String field2
+			,@ModelAttribute("field3") String field3,@ModelAttribute("field4") String field4,HttpServletResponse response) throws Exception{
 		
 		response.setContentType("application/octet-stream");
 		
@@ -45,7 +46,7 @@ public class UserController {
 
 		response.setHeader(headerKey, headerValue);
 		
-		userservice.generateExcel(response);
+		userservice.generateExcel(field1,field2,field3,field4,response);
 		
 		response.flushBuffer();
 	}

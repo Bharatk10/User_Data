@@ -22,7 +22,7 @@ public class UserService {
 	@Autowired
 	UserRepository urespo;
 	
-	public void generateExcel(HttpServletResponse response) throws Exception {
+	public void generateExcel(String field1,String field2,String field3,String field4,HttpServletResponse response) throws Exception {
 
 		
 
@@ -31,10 +31,10 @@ public class UserService {
 		HSSFRow row = sheet.createRow(0);
 
 		
-		row.createCell(0).setCellValue("First_Name");
-		row.createCell(1).setCellValue("Last_Name");
-		row.createCell(2).setCellValue("Date_of_Birth");
-		row.createCell(3).setCellValue("City");
+		row.createCell(0).setCellValue(field1);
+		row.createCell(1).setCellValue(field2);
+		row.createCell(2).setCellValue(field3);
+		row.createCell(3).setCellValue(field4);
 
 		ServletOutputStream ops = response.getOutputStream();
 		workbook.write(ops);

@@ -13,18 +13,20 @@ export class AppComponent {
   
   users:any=''
   user: any=''
+  data:any
 
   constructor(private Service:UserserviceService,private toastr:ToastrService){}
 
-  downloadExcel() {
-    this.Service.downloaddata().subscribe((data) => {
+  downloadExcel(form:any) {
+    console.log(form.value)
+    this.Service.downloaddata(form.value).subscribe((data) => {
       const blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
       a.download = 'userdata.xls';
       a.click();
-      window.URL.revokeObjectURL(url);
+      window.URL.revokeObjectURL(url); 
     });
   }
 
@@ -34,6 +36,8 @@ export class AppComponent {
   readExcelFile(event: any): void {
     const file = event.target.files[0];
     const reader = new FileReader();
+
+    reader.readAsArrayBuffer(file);
 
     reader.onload = (e) => {
       const data = e.target?.result;
@@ -52,13 +56,11 @@ export class AppComponent {
     
     };
 
-    reader.readAsArrayBuffer(file);
+    
   }
 
 
   saveuser(){
-
-
       for(var i=0;i<this.users.length;i++){
         this.user=this.users[i];
         console.log(this.user)

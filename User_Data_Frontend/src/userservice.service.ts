@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { User } from './model/User';
+
 
 
 
@@ -14,8 +14,11 @@ export class UserserviceService {
 
   constructor(private http:HttpClient) { }
 
-  downloaddata() {
-    return this.http.get(this.userUrl, { responseType: 'blob' });
+  downloaddata(data:any) {
+    console.log(data.field1)
+    let params = new HttpParams().set("field1",data.field1).set("field2",data.field2).set("field3",data.field3).set("field4",data.field4)
+    const fullUrl = `${this.userUrl}?${params.toString()}`;
+    return this.http.get(fullUrl, { responseType: 'blob', });
   }
 
   saveUsers(user:any) {
@@ -28,3 +31,4 @@ export class UserserviceService {
     return this.http.post(this.userUrl,params);
   }
 }
+ 

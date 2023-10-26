@@ -50,3 +50,42 @@ table {
   table tr:nth-child(even) {
     background-color: #f5f0f0f3;
   }
+  .input {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+  }
+  
+  .field {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center; /* Center-align text within the field */
+    border: 1px solid #363131; /* Add a border around the field */
+    padding: 10px; /* Add padding inside the field */
+    border-radius: 4px; /* Add rounded corners */
+    width: 300px; /* Set a fixed width for the field */
+    margin-left: 12cm;
+  }
+  
+  label {
+    font-weight: bold;
+    width: 100px; /* Adjust as needed for label width */
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    border: none; /* Remove the input's border */
+    outline: none; /* Remove the input's focus outline */
+    width: 100%; /* Take up the full width */
+  }
+  
+  /* Optional: Add styles for hover or focus effects */
+  .field:hover,
+  .field:focus-within {
+    border-color: #11345a;
+  }
+  

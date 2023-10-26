@@ -6,16 +6,44 @@
   <title>Document</title>
 </head>
 <body>
-
- 
 <div class="main">
 
   <h1>Template Screen</h1>
   <br>
+
+
+
+  <form #myForm="ngForm" (ngSubmit)="downloadExcel(myForm)">
+
+  <div class="text-boxes">
+
+   
+    <div class="field">
+     
+      <input type="text" id="field1" name="field1" ngModel required />
+      <label for="field1">: Field 1</label>
+    </div>
+    
+    <div class="field">
+      <input type="text" id="field2" name="field2" ngModel required />
+      <label for="field1">: Field 2</label>
+    </div>
+    <div class="field">
+     
+      <input type="text" id="field3" name="field3" ngModel required />
+      <label for="field1">: Field 2</label>
+    </div>
+    <div class="field">
+
+      <input type="text" id="field4" name="field4" ngModel required />
+      <label for="field1">: Field 3</label>
+    </div>
+  </div>
   <div class="download">
-  <button (click)="downloadExcel()">Download Excel</button>
-  
-</div>
+    <button type="submit" [disabled]="myForm.invalid">Download</button>
+  </div>
+</form>
+
 <br>
 <br>
   <div class="upload">
